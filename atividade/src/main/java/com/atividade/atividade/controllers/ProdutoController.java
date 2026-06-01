@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping(path = "/Produtos")
+@RestController // Avisa o Spring que esta classe é um controlador de API do tipo REST.
+@RequestMapping(path = "/Produtos") //Define o endereço base (URL) para aceder a este grupo de funcionalidades.
 public class ProdutoController {
-    @Autowired
+    @Autowired // Faz a Injeção de Dependências automática.
     private ProdutoService service;
 
+
+    // os maping mapeiam os Métodos HTTP que o cliente Postman utiliza para indicar a ação que deseja realizar.
     @GetMapping
     public List<ProdutoModel> listar(){
         return service.listar();

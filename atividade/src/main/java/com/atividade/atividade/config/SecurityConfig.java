@@ -10,10 +10,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
-@EnableWebSecurity
+@Configuration //Indica ao Spring que esta classe é uma classe de configuração.
+@EnableWebSecurity//: Liga a segurança web no projeto.
 public class SecurityConfig {
-    @Bean
+    @Bean // Indica que o método vai criar, configurar e devolver um objeto que deve ser gerido pelo Spring.
 
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http
