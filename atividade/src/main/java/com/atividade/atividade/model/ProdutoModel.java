@@ -7,9 +7,12 @@ import lombok.Data;
 @Entity
 @Table(name = "tb_produto")
 public class ProdutoModel {
+
+
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
+    private int valor;
 
     public ProdutoModel() {
 

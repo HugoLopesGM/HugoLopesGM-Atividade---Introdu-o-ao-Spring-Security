@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/produtos")
+@RequestMapping(path = "/Produtos")
 public class ProdutoController {
     @Autowired
     private ProdutoService service;
@@ -33,6 +33,13 @@ public class ProdutoController {
     @DeleteMapping
     public void deletar(@PathVariable Long id){
         service.deletar(id);
+    }
+
+    @PutMapping
+    public ProdutoModel alterarProduto(@PathVariable Long id, @RequestBody ProdutoModel produtoModel){
+       ProdutoModel produtoNovo = alterarProduto(id, produtoModel);
+       return service.save(produtoNovo);
+
     }
 
 }

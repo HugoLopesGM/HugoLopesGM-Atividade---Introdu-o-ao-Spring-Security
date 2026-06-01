@@ -29,7 +29,11 @@ public class ProdutoService {
         repository.deleteById(id);
     }
 
-    public
+    public ProdutoModel alterarProduto(Long id, ProdutoModel produtoModel){
+         ProdutoModel novoProduto = repository.findById(id).get();
+         novoProduto.setValor(produtoModel.getValor());
+         return repository.save(novoProduto);
+    }
 
 
 
