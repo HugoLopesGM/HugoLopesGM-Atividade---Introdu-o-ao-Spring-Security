@@ -25,17 +25,17 @@ public class ProdutoController {
         return service.save(produtoModel);
     }
 
-    @PostMapping
+    @PostMapping("{/id}")
     public Optional<ProdutoModel> buscaPorId(@PathVariable Long id){
         return service.buscaPorId(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("{/id}")
     public void deletar(@PathVariable Long id){
         service.deletar(id);
     }
 
-    @PutMapping
+    @PutMapping("{/id}")
     public ProdutoModel alterarProduto(@PathVariable Long id, @RequestBody ProdutoModel produtoModel){
        ProdutoModel produtoNovo = alterarProduto(id, produtoModel);
        return service.save(produtoNovo);
