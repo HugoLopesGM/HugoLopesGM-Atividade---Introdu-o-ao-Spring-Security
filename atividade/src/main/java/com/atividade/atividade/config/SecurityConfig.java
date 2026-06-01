@@ -20,6 +20,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(HttpMethod.GET,"/produtos").permitAll()
                         .requestMatchers(HttpMethod.POST,"/produtos").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/produtos/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE,"/produtos/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(sessios ->sessios.sessionCreationPolicy(SessionCreationPolicy.STATELESS )
